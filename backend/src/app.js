@@ -61,11 +61,4 @@ app.use("/api/tasks", taskRoutes);
 
 app.use(errorHandler);
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-  console.log(
-    `Swagger documentation available at http://localhost:${port}/docs`
-  );
-});
-
 module.exports.handler = serverless(app);
