@@ -16,7 +16,13 @@ connectDB();
 
 // Middleware
 app.use(morgan("dev")); // Logs incoming requests
-app.use(cors()); // Enables Cross-Origin Resource Sharing
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+); // Enables Cross-Origin Resource Sharing
 app.use(express.json()); // Parses incoming JSON payloads
 
 // Swagger setup
