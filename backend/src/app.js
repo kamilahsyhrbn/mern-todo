@@ -8,7 +8,6 @@ const errorHandler = require("./middleware/errorHandler");
 const userRoutes = require("./routes/userRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 const morgan = require("morgan");
-const serverless = require("serverless-http");
 
 const app = express();
 
@@ -49,10 +48,8 @@ app.use("/api/tasks", taskRoutes);
 // Global error handler
 app.use(errorHandler);
 
-module.exports.handler = serverless(app);
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-// module.exports = app;
+module.exports = app;
