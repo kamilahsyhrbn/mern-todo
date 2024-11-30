@@ -1,7 +1,7 @@
 import { IoIosArrowBack } from "react-icons/io";
 import profile from "../assets/avatar.png";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../components/Button";
 import useUserStore from "../store/userStore";
 
